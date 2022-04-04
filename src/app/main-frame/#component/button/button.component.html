@@ -1,0 +1,11 @@
+<button type="button" class="btn1" [ngStyle]="buttonStyle" (click)="buttonClickAction()" [disabled]="disabled">
+    <!-- <span  [innerHtml]="prefixImage"></span> -->
+    <img *ngIf="prefixIcon != undefined && prefixIcon != 'none' && !onlyIcon" [src]="prefixIcon" [ngStyle]="prefixStyle"
+        alt="">
+    {{onlyIcon?'':text}}
+    <img *ngIf="mainIcon != undefined && mainIcon != 'none' && onlyIcon" [src]="mainIcon" [ngStyle]="mainIconStyle"
+        alt="">
+    <img *ngIf="suffixIcon != undefined && suffixIcon != 'none' && !onlyIcon" [src]="suffixIcon" [ngStyle]="suffixStyle"
+        alt="">
+
+</button>

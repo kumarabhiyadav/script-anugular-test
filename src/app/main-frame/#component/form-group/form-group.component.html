@@ -1,0 +1,113 @@
+
+<!-- --------------------------register------------------------------------- -->
+
+<div class="form-group-field" [ngStyle]="containerBgColor" *ngIf="formtype=='register'">
+    <div class="form-group-field-wrap">
+  <div class="form-group-top top" [ngStyle]="headStyle">
+            <h1>{{mainTitle}}</h1>
+            <p>{{subTitle}}</p>
+        </div>
+        <form  class="form-group-bottom" #userForm="ngForm" (ngSubmit)="authHandler(userForm)"> 
+            {{userForm.form.invalid}}
+            <div class="form-group-input">
+                <label>{{name}}</label>
+                <input 
+                   class="userData" 
+                   [placeholder]="placeHolder1" 
+                   [ngStyle]="input" 
+                   [name]="name" 
+                   ngModel 
+                   #username="ngModel"
+                   required/>
+            </div>
+            <div class="form-group-input">
+                <label>{{emailorPhonenumber}}</label>
+                <input 
+                   class="userData"  
+                   [placeholder]="placeHolder2" 
+                   [ngStyle]="input" 
+                   name="email" 
+                   ngModel 
+                   required
+                   #email = "ngModel"
+                   />
+            </div>
+            <div class="form-group-input">
+                <label>{{Password}}</label>
+                <input 
+                   class="userData" 
+                   [placeholder]="placeHolder2" 
+                   [ngStyle]="input" 
+                   type="password" 
+                   [name]="Password" 
+                   ngModel 
+                   required
+                   #password="ngModel"
+                   />
+                <span [ngStyle]="helpermeassage">{{helperText}}</span>
+            </div>
+            <div class="form-group-alert-message">
+                <input 
+                   type="checkbox" 
+                   name="checked" 
+                   ngModel 
+                   required
+                />
+                <label >By creating an account means you agree to the Teams and conditions, and our Privacy policy </label>
+            </div>
+            <button [ngStyle]="btn" type="submit" [disabled]="!userForm.form.valid">Register</button>
+        </form>
+
+    </div>
+</div>
+
+<!-- -------------------------------Login------------------------------------------ -->
+
+<div class="form-group-field" [ngStyle]="containerBgColor" *ngIf="formtype=='login'">
+    <div class="form-group-field-wrap">
+  <div class="form-group-top top" [ngStyle]="headStyle">
+            <h1>{{mainTitle}}</h1>
+            <p>{{subTitle}}</p>
+        </div>
+        <form class="form-group-bottom"> 
+            <div class="form-group-input">
+                <label>{{emailorPhonenumber}}</label>
+                <input [placeholder]="placeHolder2" [ngStyle]="input"/>
+            </div>
+            <div class="form-group-input">
+                <label>{{Password}}</label>
+                <input [placeholder]="placeHolder2" [ngStyle]="input" type="password"/>
+                <span [ngStyle]="helpermeassage">{{helperText}}</span>
+            </div>
+            <div class="form-group-alert-message">
+                <input type="checkbox"/>
+                <label >By creating an account means you agree to the Teams and conditions, and our Privacy policy </label>
+            </div>
+            <button [ngStyle]="btn">Sign in</button>
+        </form>
+
+    </div>
+</div>
+
+<!-- ----------------------------------------reset password--------------------------------- -->
+
+<div class="form-group-field" [ngStyle]="containerBgColor" *ngIf="formtype=='resetpassword'">
+    <div class="form-group-field-wrap">
+  <div class="form-group-top top" [ngStyle]="headStyle">
+            <h1>{{mainTitle}}</h1>
+            <p>{{subTitle}}</p>
+        </div>
+        <form class="form-group-bottom"> 
+            <div class="form-group-input">
+                <label>{{emailorPhonenumber}}</label>
+                <input [placeholder]="placeHolder2" [ngStyle]="input"/>
+            </div>
+            <div class="form-group-alert-message">
+                <input type="checkbox"/>
+                <label >By creating an account means you agree to the Teams and conditions, and our Privacy policy </label>
+            </div>
+            <button [ngStyle]="btn">Send me the link</button>
+        </form>
+
+    </div>
+</div>

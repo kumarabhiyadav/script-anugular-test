@@ -1,0 +1,27 @@
+<!-- If only image is provided -->
+<div style="position: relative;">
+    <img *ngIf="(url!=null && url!='') &&  (text==null || text==undefined)" [src]="url" alt="avatar" [ngStyle]="avatarStyle">
+    <div *ngIf="showStatusIndicator && ((url!=null && url!='') &&  (text==null || text==undefined))" [ngStyle]="statusIndicatorStyle" class="online-btn">
+
+    </div>
+</div>
+
+<!-- If only text is provided -->
+
+<div style="position: relative;" *ngIf="(url==null || url=='')&& (text!=null && text!=undefined)" [ngStyle]="avatarStyle">
+    <span [ngStyle]="textStyle"> {{text}}</span>
+    <div *ngIf="showStatusIndicator" [ngStyle]="statusIndicatorStyle" class="online-btn">
+
+    </div>
+</div>
+
+<!-- If image and text is provided -->
+
+<div style="position: relative;" *ngIf="(url!=null && url!='')&& (text!=null && text!=undefined)" [ngStyle]="divStyle">
+
+    <img [src]="url" alt="avatar" [ngStyle]="avatarStyle">
+    <span [ngStyle]="textStyle">{{text}}</span>
+    <div *ngIf="showStatusIndicator" [ngStyle]="statusIndicatorStyle" class="online-btn">
+
+    </div>
+</div>

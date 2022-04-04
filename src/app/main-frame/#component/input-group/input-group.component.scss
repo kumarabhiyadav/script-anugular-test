@@ -1,0 +1,16 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+}
+.input>span{
+    padding: 5px 0;
+}
+
+.input-Icon{
+    width: 15px;
+    position: absolute;
+    top: 39px;
+    left: 10px;
+}

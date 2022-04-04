@@ -1,0 +1,18 @@
+<div *ngIf="type == 'text' || type=='password' ||  type=='number'" class="input">
+    <label for="id" [ngStyle]="labelStyle">{{label}}</label>
+    <input class="input-field" [placeholder]="placeholder" [type]="type" [ngStyle]="inputStyle" />
+    <img [src]="url" alt="" class="input-Icon" />
+
+    <span [ngStyle]="helperTextStyle">{{helpertext}}</span>
+</div>
+
+<div *ngIf="type == 'radio' || type=='checkbox'" [ngStyle]="checkboxandradio" >
+    <div [ngStyle]="checkboxandradiowrap">
+        <label [ngStyle]="labelcontainer" for="id" [id]="id">{{label}}</label>
+        <input [placeholder]="placeholder" name="radio" [type]="type" />
+    </div>
+    <div [ngStyle]="checkboxandradiowrap">
+        <label [ngStyle]="labelcontainer" for="id">{{label2}}</label>
+        <input [placeholder]="placeholder" name="radio" [disabled]="disabled" [type]="type" [id]="id"/>
+    </div>
+</div>

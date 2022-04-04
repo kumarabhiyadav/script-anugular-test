@@ -1,0 +1,44 @@
+input.ng-touched.ng-invalid {
+    background-color: #FFE6E4;
+}
+
+.form-group-field {
+    margin: 10px;
+    // font-family: Inter;
+    font-style: normal;
+}
+
+.form-group-field-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-top>h1 {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.form-group-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.form-group-input>label {
+    margin-bottom: 10px;
+}
+
+.form-group-alert-message {
+    display: flex;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.form-group-alert-message>input {
+    margin: 2px 10px 0 0;
+}

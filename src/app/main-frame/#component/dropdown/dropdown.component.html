@@ -1,0 +1,55 @@
+<div style="display: flex;">
+
+    <!-- dropDownType=='Dropdown' -->
+    <div *ngIf="dropDownType=='Dropdown'" style="position: relative;">
+        <div #dropDownSelect (click)="myFunction()" class="dropdown-select" [ngStyle]="dropDownStyle">
+            {{dropDownLabel}}
+            <i class="mdi mdi-chevron-down"></i>
+        </div>
+        <div #dropDownMenu class="dropdown1-menu" [ngStyle]="dropDownMenuStyle">
+            <div *ngFor="let data of dropDownItem;let i=index;">
+                <div *ngIf="data['isSeperator']" class="dropdown1-divider"></div>
+                <div class="dropdown1-item" (click)="itemClickHandler(data)" [ngStyle]="data['isSelected']? selectedItemStyle:{}">
+                    <img *ngIf="data['prefixIcon'] != undefined && data['prefixIcon'] != '' " [src]="!data['isSelected']?data['prefixIcon']:(data['selectedPrefixIcon']==null || data['selectedPrefixIcon']==undefined?data['prefixIcon']:data['selectedPrefixIcon'])" [ngStyle]="prefixStyle"
+                        alt=""> <span class="content-width" [title]="data['label']">
+                        {{data['label']}}</span>
+                    <div *ngIf="data['suffixText']!=null && data['suffixText']!=undefined && data['suffixText']!=''" class="suffix-badge" [ngStyle]="suffixStyle">
+                        <span class="content-width" [title]="data['suffixText']"> {{data['suffixText']}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- dropDownType=='Menu' -->
+    <div *ngIf="dropDownType=='Menu'" style="position: relative;">
+        <div (click)="myFunction()">
+            <ng-content select="[toggleContent]"></ng-content>
+        </div>
+        <div #dropDownMenu class="dropdown1-menu">
+            <div *ngFor="let data of dropDownItem;let i=index;">
+                <div *ngIf="data['isSeperator']" class="dropdown1-divider"></div>
+                <div class="dropdown1-item" (click)="itemClickHandler(data)" [ngStyle]="data['isSelected']? selectedItemStyle:{}">
+                    <img *ngIf="data['prefixIcon'] != undefined && data['prefixIcon'] != '' " [src]="!data['isSelected']?data['prefixIcon']:(data['selectedPrefixIcon']==null || data['selectedPrefixIcon']==undefined?data['prefixIcon']:data['selectedPrefixIcon'])" [ngStyle]="prefixStyle"
+                        alt="">
+                    <span class="content-width" [title]="data['label']">
+                        {{data['label']}}
+                    </span>
+                    <div *ngIf="data['suffixText']!=null && data['suffixText']!=undefined && data['suffixText']!=''" class="suffix-badge" [ngStyle]="suffixStyle">
+                        <span class="content-width" [title]="data['suffixText']"> {{data['suffixText']}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- dropDownType=='Customize' -->
+    <div *ngIf="dropDownType=='Customize'" style="position: relative;">
+        <div (click)="myFunction()">
+            <ng-content select="[customizeToggleContent1]"></ng-content>
+        </div>
+        <div #dropDownMenu class="dropdown1-menu" [ngStyle]="dropDownCustomizeStyle">
+            <ng-content select="[mainContent]"></ng-content>
+        </div>
+    </div>
+</div>

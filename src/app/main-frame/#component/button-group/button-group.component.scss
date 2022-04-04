@@ -1,0 +1,41 @@
+.selected-btn {
+    font-size: 0.9rem;
+    border-radius: 0.35rem;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #79859c;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.unselected-btn {
+    font-size: 0.9rem;
+    border-radius: 0.35rem;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #79859c;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.border-btn {
+    height: 20px !important;
+    border-left: solid 1px black;
+    border-radius: 0px;
+}

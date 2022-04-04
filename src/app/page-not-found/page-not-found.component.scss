@@ -1,0 +1,17 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.main-page {
+  height: 80vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.page {
+  text-align: center;
+}

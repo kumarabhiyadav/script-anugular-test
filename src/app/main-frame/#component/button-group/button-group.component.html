@@ -1,0 +1,14 @@
+<div *ngIf="!onlyIcon" [ngStyle]="bgDivStyle">
+    <div style="display: flex;align-items: center;" *ngFor="let data of buttonList;let i=index">
+        <button (click)="buttonClickAction(i)" [ngClass]="{'selected-btn':data['selected'],'unselected-btn':!data['selected']}" [ngStyle]="data['selected']?selectedButtonStyle:unSelectedButtonStyle">{{data['label']}}</button>
+        <div *ngIf=" getSelectedButtonIndex()!=i+1 && !buttonList[i]['selected'] && i+1!=buttonList.length" [ngStyle]="verticalDivStyle">
+        </div>
+
+    </div>
+</div>
+<div *ngIf="onlyIcon" [ngStyle]="bgDivStyle">
+    <img (click)="imageClickAction(0)" [src]="prefixIcon" [ngStyle]="imgStyle" alt="">
+    <div [ngStyle]="verticalDivStyle">
+    </div>
+    <img (click)="imageClickAction(1)" [src]="suffixIcon" [ngStyle]="imgStyle" alt="">
+</div>

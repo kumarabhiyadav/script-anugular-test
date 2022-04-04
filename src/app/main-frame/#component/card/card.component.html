@@ -1,0 +1,60 @@
+<div *ngIf="cardType=='normal'" class="card1" [ngStyle]="cardStyle">
+    <img *ngIf="img!=null && img !=undefined && imgPosition=='top'" class="card1-img-top img-fluid" [src]="img" [ngStyle]="imgStyle" alt="Card image">
+    <div *ngIf="showPositionTopRightButton" class="card1-btn-right-position">
+        <ng-content select="[positionTopRightButton]"></ng-content>
+    </div>
+    <div *ngIf="showPositionTopLeftButton" class="card1-btn-left-position">
+        <ng-content select="[positionTopLeftButton]"></ng-content>
+    </div>
+    <div class="card1-body">
+
+        <h4 class="card1-title">{{title}}</h4>
+        <h5 class="card1-subtitle">{{subTitle}}</h5>
+        <p class="card1-title-desc">{{description}} </p>
+        <div class="card1-button">
+            <ng-content select="[btmLeftButton]"></ng-content>
+            <ng-content select="[btmRightButton]"></ng-content>
+        </div>
+    </div>
+    <img *ngIf="img!=null && img !=undefined && imgPosition=='bottom'" class="card1-img-bottom img-fluid" [src]="img" [ngStyle]="imgStyle" alt="Card image">
+
+</div>
+<div *ngIf="cardType=='course'" class="card1" [ngStyle]="cardStyle">
+    <img (click)="cardClickAction()" *ngIf="img!=null && img !=undefined && imgPosition=='top'" class="card1-img-top img-fluid" [src]="img" [ngStyle]="imgStyle" alt="Card image">
+    <div *ngIf="showPositionTopRightButton" class="card1-btn-right-position">
+        <ng-content select="[positionTopRightButtonCourse]"></ng-content>
+    </div>
+    <div *ngIf="showPositionTopLeftButton" class="card1-btn-left-position">
+        <ng-content select="[positionTopLeftButtonCourse]"></ng-content>
+    </div>
+    <div class="card1-body">
+
+        <h4 class="card1-title" (click)="cardClickAction()">{{title}}</h4>
+        <h5 class="card1-subtitle" (click)="cardClickAction()">{{subTitle}}</h5>
+        <div class="card1-title-desc">
+            <ng-content select="[descriptionCourse]"></ng-content>
+        </div>
+        <div class="card1-button">
+            <ng-content select="[btmLeftButtonCourse]"></ng-content>
+            <ng-content select="[btmRightButtonCourse]"></ng-content>
+        </div>
+    </div>
+    <img *ngIf="img!=null && img !=undefined && imgPosition=='bottom'" class="card1-img-bottom img-fluid" [src]="img" [ngStyle]="imgStyle" alt="Card image">
+
+</div>
+<div *ngIf="cardType=='notification'" class="card1" [ngStyle]="cardStyle">
+
+    <div class="card1-body">
+        <div [ngStyle]="alignContentStyle">
+
+            <ng-content select="[topCenterButton]"></ng-content>
+        </div>
+        <h4 [ngStyle]="alignContentStyle" class="card1-title">{{title}}</h4>
+        <h5 [ngStyle]="alignContentStyle" class="card1-subtitle">{{subTitle}}</h5>
+        <p [ngStyle]="alignContentStyle" class="card1-title-desc">{{description}} </p>
+        <div [ngStyle]="alignContentStyle" class="card1-button">
+            <ng-content select="[btmCenterButton]"></ng-content>
+        </div>
+    </div>
+
+</div>
